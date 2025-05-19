@@ -158,7 +158,9 @@ def agregar_dispositivo(campus_actual):
             print("Por favor ingrese una IP diferente.")
             continue
             
-        break 
+        break
+
+    mascara = input("Ingresa la máscara de subred (ej: 255.255.255.0): ")
 
     vlans = input("Ingrese las VLANs (separadas por coma): ").split(",")
 
@@ -182,6 +184,7 @@ def agregar_dispositivo(campus_actual):
         f.write("\n---------------------------------\n")
         f.write(f"Nombre del dispositivo: {nombre}\n")
         f.write(f"IP: {ip}\n")
+        f.write(f"Máscara: {mascara}\n")
         f.write(f"Jerarquía: {jerarquia_txt}\n")
         f.write("VLANs: " + ", ".join(vlans) + "\n")
         f.write("Servicios: " + ", ".join(servicios) + "\n")
